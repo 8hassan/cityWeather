@@ -1,0 +1,15 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Simple Weather App",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hassan",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "sass": "^1.64.1"
+  }
+}
