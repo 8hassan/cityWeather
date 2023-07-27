@@ -2,8 +2,9 @@
 
 console.log("before");
 
-async function getWeatherByCity(city = document.querySelector("#cityInput").value){
+async function getWeatherByCity(target, city = document.querySelector("#cityInput").value){
     try{
+        console.log(city);
         const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d3a7d33379fb26510969122123560018&units=metric`;
 
         const response = await fetch(weatherApiUrl);
@@ -55,7 +56,7 @@ async function success(position){
     let city = data.city;
     console.log(city);
 
-    getWeatherByCity(city);
+    getWeatherByCity(undefined, city);
 }
 
 const error = () => {
