@@ -1,15 +1,17 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 body {
   background-color: #454547;
+  color: white;
+  font-family: monospace;
 }
-body #weatherDiv {
+body #container {
   background-color: rgb(44, 193, 193);
-  width: 25vw;
-  height: 70vh;
+  width: 335px;
+  height: 550px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,7 +19,7 @@ body #weatherDiv {
   box-shadow: 2px 2px 40px 5px black;
   border-radius: 20px;
 }
-body #weatherDiv form {
+body #container #cityForm {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +27,7 @@ body #weatherDiv form {
   width: 100%;
   height: 20%;
 }
-body #weatherDiv form #city {
+body #container #cityForm #cityInput {
   background-color: white;
   width: 70%;
   height: 50%;
@@ -34,13 +36,76 @@ body #weatherDiv form #city {
   border: none;
   border-radius: 20px;
 }
-body #weatherDiv form #search {
+body #container #cityForm #cityInput:focus {
+  outline-style: none;
+  box-shadow: 0px 0px 15px 2px;
+}
+body #container #cityForm #search {
   width: 12%;
   height: 45%;
   background-color: #454547;
   color: white;
   border: none;
   border-radius: 50%;
+}
+body #container #weatherData {
+  width: 100%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 1;
+  justify-items: center;
+}
+body #container #weatherData #weatherImage {
+  margin-top: -20px;
+  margin-bottom: 2px;
+}
+body #container #weatherData #cityName, body #container #weatherData #weatherText {
+  text-align: center;
+}
+body #container #weatherData #cityName {
+  font-size: 2.3rem;
+}
+body #container #weatherData #weatherText {
+  font-size: 3.3rem;
+}
+body #container #weatherData #weatherText::after {
+  content: "°C";
+}
+body #container #humidityAndWind {
+  width: 100%;
+  height: 20%;
+  display: grid;
+  align-items: end;
+  grid-template-columns: auto auto;
+}
+body #container #humidityAndWind #humidityContainer, body #container #humidityAndWind #windContainer {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 10px;
+  padding: 30px;
+}
+body #container #humidityAndWind #humidityContainer #windInfo, body #container #humidityAndWind #humidityContainer #humidityInfo, body #container #humidityAndWind #windContainer #windInfo, body #container #humidityAndWind #windContainer #humidityInfo {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+body #container #humidityAndWind #humidityContainer #windInfo #humidityImage, body #container #humidityAndWind #humidityContainer #windInfo #windImage, body #container #humidityAndWind #humidityContainer #humidityInfo #humidityImage, body #container #humidityAndWind #humidityContainer #humidityInfo #windImage, body #container #humidityAndWind #windContainer #windInfo #humidityImage, body #container #humidityAndWind #windContainer #windInfo #windImage, body #container #humidityAndWind #windContainer #humidityInfo #humidityImage, body #container #humidityAndWind #windContainer #humidityInfo #windImage {
+  height: 2.2rem;
+}
+body #container #humidityAndWind #humidityContainer #windInfo #humidityPercentage, body #container #humidityAndWind #humidityContainer #windInfo #windSpeed, body #container #humidityAndWind #humidityContainer #humidityInfo #humidityPercentage, body #container #humidityAndWind #humidityContainer #humidityInfo #windSpeed, body #container #humidityAndWind #windContainer #windInfo #humidityPercentage, body #container #humidityAndWind #windContainer #windInfo #windSpeed, body #container #humidityAndWind #windContainer #humidityInfo #humidityPercentage, body #container #humidityAndWind #windContainer #humidityInfo #windSpeed {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 5px;
+}
+body #container #humidityAndWind #humidityContainer #windInfo #humidityPercentage::after, body #container #humidityAndWind #humidityContainer #humidityInfo #humidityPercentage::after, body #container #humidityAndWind #windContainer #windInfo #humidityPercentage::after, body #container #humidityAndWind #windContainer #humidityInfo #humidityPercentage::after {
+  content: "%";
+}
+body #container #humidityAndWind #humidityContainer #windInfo #windSpeed::after, body #container #humidityAndWind #humidityContainer #humidityInfo #windSpeed::after, body #container #humidityAndWind #windContainer #windInfo #windSpeed::after, body #container #humidityAndWind #windContainer #humidityInfo #windSpeed::after {
+  content: " Km/hour";
+  font-size: 0.8rem;
+}
+body #container #humidityAndWind #humidityContainer #windText, body #container #humidityAndWind #humidityContainer #humidityText, body #container #humidityAndWind #windContainer #windText, body #container #humidityAndWind #windContainer #humidityText {
+  font-size: 1.1rem;
+  font-weight: bolder;
 }
 
 /*# sourceMappingURL=styles.css.map */

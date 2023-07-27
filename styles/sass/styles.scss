@@ -1,18 +1,22 @@
 $matt-black: #454547;
 $darkcyan: rgb(44, 193, 193);
+$text-color: white;
 
 *{
     box-sizing: border-box;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 body{
     background-color: $matt-black;
-    #weatherDiv{
+    color: $text-color;
+
+    font-family: monospace;
+    #container{
         background-color: $darkcyan;
 
-        width: 25vw;
-        height: 70vh;
+        width: 335px;
+        height: 550px;
 
         // centering the div
         position: absolute;
@@ -23,7 +27,7 @@ body{
         box-shadow: 2px 2px 40px 5px black;
         border-radius: 20px;
 
-        form{
+        #cityForm{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,7 +36,7 @@ body{
             width: 100%;
             height: 20%; 
 
-            #city{
+            #cityInput{
                 background-color: white;
                 
                 width: 70%;
@@ -42,6 +46,11 @@ body{
                 font-size: 1rem;
                 border: none;
                 border-radius: 20px;
+
+                &:focus{
+                    outline-style: none;
+                    box-shadow: 0px 0px 15px 2px;
+                }
             }
             #search{
                 width: 12%;
@@ -52,6 +61,73 @@ body{
 
                 border: none;
                 border-radius: 50%;
+            }
+        }
+        #weatherData{
+            width: 100%;
+            height: 60%;
+
+            display: grid;
+            grid-template-columns: 1;
+            justify-items: center;
+
+            #weatherImage{
+                margin-top: -20px;
+                margin-bottom: 2px;
+            }
+            
+            #cityName, #weatherText{
+                text-align: center;
+            }
+            #cityName{
+                font-size: 2.3rem;
+            }
+            #weatherText{
+                font-size: 3.3rem;
+                &::after{
+                    content: "°C";
+                }
+            }
+        }
+        #humidityAndWind{
+            width: 100%;
+            height: 20%;         
+            
+            display: grid;
+            align-items: end;
+            grid-template-columns: auto auto;
+
+            #humidityContainer, #windContainer{
+                display: grid;
+                grid-template-rows: auto auto;
+                row-gap: 10px;
+                padding: 30px;
+
+                #windInfo, #humidityInfo{
+                    display: grid;
+                    grid-template-columns: auto auto;
+
+                    #humidityImage, #windImage{
+                        height: 2.2rem;
+                    }
+                    #humidityPercentage, #windSpeed{
+                        font-size: 1rem;
+                        font-weight: bold;
+                        margin-left: 5px;
+                    }
+                    #humidityPercentage::after{
+                        content: "%";
+                    }
+                    #windSpeed::after{
+                        content: " Km/hour";
+                        font-size: .8rem;
+
+                    }
+                }
+                #windText , #humidityText{   
+                    font-size: 1.1rem;
+                    font-weight: bolder;
+                }
             }
         }
     }
