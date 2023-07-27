@@ -4,7 +4,6 @@ console.log("before");
 
 async function getWeatherByCity(target, city = document.querySelector("#cityInput").value){
     try{
-        console.log(city);
         const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d3a7d33379fb26510969122123560018&units=metric`;
 
         const response = await fetch(weatherApiUrl);
@@ -18,7 +17,7 @@ async function getWeatherByCity(target, city = document.querySelector("#cityInpu
         
 
         weatherText.textContent = data.main.temp;
-        cityName.textContent = city;
+        cityName.textContent = data.sys.country + " / " + city;
         humidity.textContent = data.main.humidity;
         wind.textContent = data.wind.speed;
 
