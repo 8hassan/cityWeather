@@ -48,6 +48,10 @@ body #container #cityForm #search {
   border: none;
   border-radius: 50%;
 }
+body #container #cityForm #search:active {
+  background-color: white;
+  color: rgb(44, 193, 193);
+}
 body #container #weatherData {
   width: 100%;
   height: 60%;
